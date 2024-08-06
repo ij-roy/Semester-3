@@ -12,8 +12,10 @@ int main(){
     for (int i = 0; i < N; i++)
     {
         printf("Enter Number %d : ",i+1);
-        scanf("%d",&ptr[i]);
-        sum += ptr[i];
+        scanf("%d",ptr + i);
+        sum += *(ptr+i);
     }
     printf("The Sum of Given %d numbers is %d",N,sum);
+    
+    free(ptr);
 }
