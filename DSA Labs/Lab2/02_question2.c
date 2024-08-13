@@ -14,6 +14,7 @@ typedef struct
 }book;
 
 void print(book);
+void deleteBook(int,book *,int);
 
 int main(){
     int N , location;
@@ -27,10 +28,8 @@ int main(){
     {
         printf("For Book %d\n",i+1);
         printf("Enter The Title of the Book : ");
-        // scanf("%s",&ptr[i].title);
         scanf(" %[^\n]%*c", ptr[i].title);
         printf("Enter The Author of The Book : ");
-        // scanf("%s",&ptr[i].author);
         scanf(" %[^\n]%*c", ptr[i].author);
         printf("Enter The Price of The Book : ");
         scanf("%f",&ptr[i].price);
@@ -38,19 +37,12 @@ int main(){
     printf("Now Give Details for Deletion\n");
     printf("Enter Index of book to delete : ");
     scanf("%d",&location);
-    // printf("Enter Title of the Book : ");
-    // scanf(" %[^\n]%*c", b1.title);
-    // printf("Enter The Author of The Book : ");
-    // scanf(" %[^\n]%*c", b1.author);
-    // printf("Enter The Price of The Book : ");
-    // scanf("%f",&b1.price);
+    deleteBook(location,ptr,N);
+    
+    ptr = (book*)realloc(ptr,sizeof(book)*(N-1));
 
-    ptr = (book*)realloc(ptr,sizeof(book)*(N+1));
-
-    // insertBook(location,b1,ptr,N+1);
-
-    printf("\nPrinting The Details\n\n");
-    for (int i = 0; i < N+1; i++)
+    printf("Printing The Details\n\n");
+    for (int i = 0; i < N-1; i++)
     {
         printf("Book%d\n",i+1);
         print(ptr[i]);
@@ -67,9 +59,8 @@ void print(book ptr){
 }
 
 void deleteBook(int location,book *ptr,int N){
-    for (int i = location-1; i < N; i++)
+    for (int i = location-1; i < N-1; i++)
     {
         ptr[i] = ptr[i+1];
     }
-    
 }
