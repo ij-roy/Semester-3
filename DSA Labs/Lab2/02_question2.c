@@ -1,8 +1,7 @@
 /*
-Question 1. Create a book data type. Write a function insertBook to insert 
-one book in an existing array of books. The array should be dynamically created. 
-The position of insertion is an input from the user. 
-No new array should be created. Modify the size of your array.
+Question 2. Add a function deleteBook to delete one book from the array of books. 
+The book to be deleted should be an input from the user. 
+Resize your array. No new array should be created.
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +14,6 @@ typedef struct
 }book;
 
 void print(book);
-void insertBook(int,book,book *,int);
 
 int main(){
     int N , location;
@@ -37,19 +35,19 @@ int main(){
         printf("Enter The Price of The Book : ");
         scanf("%f",&ptr[i].price);
     }
-    printf("Now Give Details for Insertion\n");
-    printf("Enter Location where to insert : ");
+    printf("Now Give Details for Deletion\n");
+    printf("Enter Index of book to delete : ");
     scanf("%d",&location);
-    printf("Enter Title of the Book : ");
-    scanf(" %[^\n]%*c", b1.title);
-    printf("Enter The Author of The Book : ");
-    scanf(" %[^\n]%*c", b1.author);
-    printf("Enter The Price of The Book : ");
-    scanf("%f",&b1.price);
+    // printf("Enter Title of the Book : ");
+    // scanf(" %[^\n]%*c", b1.title);
+    // printf("Enter The Author of The Book : ");
+    // scanf(" %[^\n]%*c", b1.author);
+    // printf("Enter The Price of The Book : ");
+    // scanf("%f",&b1.price);
 
     ptr = (book*)realloc(ptr,sizeof(book)*(N+1));
 
-    insertBook(location,b1,ptr,N+1);
+    // insertBook(location,b1,ptr,N+1);
 
     printf("\nPrinting The Details\n\n");
     for (int i = 0; i < N+1; i++)
@@ -67,9 +65,11 @@ void print(book ptr){
     printf("Author : %s\n",ptr.author);
     printf("Price : %.1f\n\n",ptr.price);
 }
-void insertBook(int location,book b1,book *ptr,int size){
-    for (int i = size; i > location; i--){
-        ptr[i-1] = ptr[i-2];
+
+void deleteBook(int location,book *ptr,int N){
+    for (int i = location-1; i < N; i++)
+    {
+        ptr[i] = ptr[i+1];
     }
-    ptr[location-1] = b1;    
+    
 }
