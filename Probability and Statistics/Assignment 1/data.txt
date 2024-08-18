@@ -1,0 +1,66 @@
+Data on Plastic Pollution
+1. Annual Plastic Waste Generation (in million metric tons)
+    Region: North America
+        Annual Waste: 42 million metric tons
+    Region: Europe
+        Annual Waste: 58 million metric tons
+    Region: Asia
+        Annual Waste: 142 million metric tons
+    Region: Africa
+        Annual Waste: 17 million metric tons
+    Region: South America
+        Annual Waste: 23 million metric tons
+2. Percentage of Mismanaged Plastic Waste
+    Region: North America
+        Mismanaged Waste: 5%
+    Region: Europe
+        Mismanaged Waste: 3%
+    Region: Asia
+        Mismanaged Waste: 50%
+    Region: Africa
+        Mismanaged Waste: 70%
+    Region: South America
+        Mismanaged Waste: 40%
+3. Top Sources of Oceanic Plastic Pollution
+    Fishing Gear (e.g., nets, traps): 20%
+    Single-Use Plastics (e.g., bags, bottles): 40%
+    Microplastics (e.g., from cosmetics, synthetic clothing): 15%
+    Industrial Discharge: 10%
+    Other Sources: 15%
+4. Plastic Debris Density (pieces per square kilometer)
+    Region: North Pacific Ocean (Great Pacific Garbage Patch)
+        Debris Density: 334,271 pieces/km²
+    Region: North Atlantic Ocean
+        Debris Density: 102,245 pieces/km²
+    Region: Indian Ocean
+        Debris Density: 84,426 pieces/km²
+    Region: Mediterranean Sea
+        Debris Density: 64,854 pieces/km²
+5. Impact on Marine Life (Number of Species Affected)
+    Marine Species Affected Globally: 700+ species
+    Birds: 40% of seabird species have ingested plastics.
+    Fish: 30% of fish species in studied areas have ingested microplastics.
+    Mammals: 100% of sea turtles have been found with plastics in their digestive systems.
+6. Economic Impact of Plastic Pollution
+    Global Annual Cost: Estimated $13 billion due to marine ecosystem damage, clean-up efforts, and losses in tourism and fisheries.
+    Using the Data to Create Visualizations
+
+Box Plot:
+    Data: Mismanaged plastic waste percentages across different regions.
+    Purpose: Visualize the distribution and variability in plastic waste management.
+
+Scatter Plot:
+    Data: Relationship between annual plastic waste generation and mismanaged waste percentage.
+    Purpose: Show the correlation between the amount of plastic waste generated and the proportion that is mismanaged.
+
+Frequency Polygon:
+    Data: Distribution of plastic debris density across different ocean regions.
+    Purpose: Illustrate the spread and frequency of plastic debris in various parts of the ocean.
+
+Bar Graph:
+    Data: Annual plastic waste generation by region.
+    Purpose: Compare the amounts of plastic waste generated in different regions of the world.
+
+Pie Chart:
+    Data: Sources of oceanic plastic pollution.
+    Purpose: Show the proportional contribution of various sources to overall plastic pollution in the oceans.
