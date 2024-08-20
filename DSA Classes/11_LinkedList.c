@@ -7,6 +7,7 @@ typedef struct node
 }node;
 void display(node *);
 node * create(node *);
+node * insertStart(node *);
 
 int main(){
     node * pstart = NULL;
@@ -17,6 +18,9 @@ int main(){
     {
         pstart = create(pstart);
     }
+    display(pstart);
+    pstart = insertStart(pstart);
+    printf("Printing New List : \n");
     display(pstart);
     return 0;
 }
@@ -51,4 +55,18 @@ void display(node * pstart){
         ptr = ptr->next;
     }
     
+}
+node * insertStart(node * pstart){
+    node * pnode = (node*)malloc(sizeof(node));
+    if (pnode == NULL) {
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
+    printf("Enter Number to insert at start : \n");
+    scanf("%d",&pnode->number);
+    pnode->next = pstart;
+    pstart = pnode;
+    
+    printf("Data Added :) \n");
+    return(pstart);
 }
