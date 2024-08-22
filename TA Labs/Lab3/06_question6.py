@@ -4,12 +4,9 @@ variable or multiple assignment operation.
 '''
 a = int(input("Enter the first number (a): "))
 b = int(input("Enter the second number (b): "))
-'''
-old method
 a = a + b  
 b = a - b  
 a = a - b  
-'''
-a,b = b,a
+# a,b = b,a       multiple assignment
 print(f"After swapping, value of a: {a}")
 print(f"After swapping, value of b: {b}")
