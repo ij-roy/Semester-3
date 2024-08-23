@@ -12,7 +12,13 @@ data = [data1,data2,data3,data4]
 print(data)
 
 fig = plt.figure(figsize=(10,7))
-ax = fig.add_axes([0,0,1,1])
-bp = ax.boxplot(data1)
+# ax = fig.add_axes([0,0,1,1])
+# bp1 = ax.boxplot(data)
+# plt.show()
+plt.hist(data1, bins=30, color='blue', edgecolor='black')
+
+# plt.title('Histogram of data1')
+# plt.xlabel('Value')
+# plt.ylabel('Frequency')
 
 plt.show()
