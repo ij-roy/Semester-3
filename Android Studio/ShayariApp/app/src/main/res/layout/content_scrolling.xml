@@ -10,9 +10,11 @@
     tools:showIn="@layout/activity_add_edit">
 
     <EditText
+        android:id="@+id/shayari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
+        android:inputType="textMultiLine|textCapSentences"
         android:layout_margin="@dimen/text_margin"
         android:text="@string/large_text" />
 

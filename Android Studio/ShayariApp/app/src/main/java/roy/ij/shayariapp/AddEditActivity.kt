@@ -18,7 +18,7 @@ class AddEditActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(findViewById(R.id.toolbar))
-        binding.toolbarLayout.title = title
+        binding.toolbarLayout.title = "Add Your Shayari"
 
     }
 }
