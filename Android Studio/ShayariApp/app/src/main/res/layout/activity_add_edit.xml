@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Text bottom not properly visible after collapsed view"-->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="180dp"
         android:fitsSystemWindows="true"
         android:theme="@style/Theme.ShayariApp.AppBarOverlay">
 
@@ -25,16 +26,16 @@
             app:contentScrim="@color/black"
             app:expandedTitleTextColor="@color/white"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:expandedTitleMarginBottom="50dp"
             app:toolbarId="@+id/toolbar">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/black"
+                android:paddingBottom="45sp"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.ShayariApp.PopupOverlay"
-                app:titleTextColor="@color/white" />
+                app:popupTheme="@style/Theme.ShayariApp.PopupOverlay" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
