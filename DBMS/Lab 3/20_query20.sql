@@ -1,0 +1,6 @@
+-- Display all orders details sorted by salesman
+SELECT s.NAME AS Salesman_Name, o.ORD_NO, o.PURCHASE_AMT, o.ORD_DATE, c.CUST_NAME
+FROM ORDERS o
+JOIN SALESMAN s ON o.SALESMAN_ID = s.SALESMAN_ID
+JOIN CUSTOMER1 c ON o.CUSTOMER_ID = c.CUSTOMER_ID
+ORDER BY s.NAME, o.ORD_NO;
