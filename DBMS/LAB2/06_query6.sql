@@ -1,0 +1,5 @@
+-- Select the name and city of salesmen with commission > 20% and city = 'BANGALORE'
+SELECT NAME, CITY
+FROM SALESMAN
+WHERE CAST(SUBSTRING(COMMISSION, 1, LENGTH(COMMISSION) - 1) AS UNSIGNED) > 20
+  AND CITY = 'BANGALORE';
