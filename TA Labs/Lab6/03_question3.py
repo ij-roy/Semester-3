@@ -18,9 +18,7 @@ while i <= N:
 # b part
 i = 1
 while i <= N:
-    # Print (N-i) spaces followed by i stars
     print(' ' * (N - i) + '*' * i)
-    # Increment the counter
     i += 1
 
 # c part
