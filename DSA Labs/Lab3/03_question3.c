@@ -1,54 +1,86 @@
 /*
-Question 3 . Create a single linked list of non-negative integers. 
-Write a function to display the nodes of your list. 
-This should be a menu driven program.
+Question 3 . Write a program to create a single linked list of non-negative integers.
+Note: No global pointer variables should be used.
+    a. Write a function to create the linked list. Call this method from main so 
+    that a list of 5 elements can be created. 
+    Take the integer of the node from the user.
+    b. Write a function to display the nodes of your list.
+    c. Write a function to insert a node at the beginning of the linked list. 
+    Again take the integer to be inserted from the user
+    d. Call your function to display your list again.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
-    int number ;
+typedef struct node{
+    unsigned int number;
     struct node * next;
 }node;
 
+node * createNode(node* pstart);
+void displayll(node*pstart);
+node * insertAtBeginning(node* pstart);
+
 int main(){
     int size;
-    node * pnode = NULL;//Temp
+    node * pnode = NULL; //Temp
     node * pstart = NULL;
-    node * ptr = NULL;//Current 
+    node * ptr = NULL; //Current 
     printf("Enter Size of array : ");
     scanf("%d",&size);
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++)
+    {
+        pstart = createNode(pstart);
+    } 
+    displayll(pstart);
+    pstart = insertAtBeginning(pstart);
+    displayll(pstart);
+}
 
-        pnode = (node*)malloc(sizeof(node));
+node * createNode(node* pstart){
+    node * ptr = NULL; //Current 
+    node * pnode = (node*)malloc(sizeof(node));
 
-        printf("Enter data for node %d : ",i+1);
+    printf("Enter data for node : ");
         scanf("%d",&pnode->number);
         pnode->next = NULL;
 
-        if (pstart == NULL)
-        {
+    if (pstart == NULL)
+    {
         pstart = pnode;
-        }else{
-            ptr->next = pnode;
+    }else{
+        node * ptr = pstart;
+        while (ptr->next != NULL)
+        {
+            ptr = ptr->next;
         }
-        ptr = pnode;
+        ptr->next = pnode;
     }
+    return pstart;
+}
 
-    printf("Printing the nodes : \n");
-    ptr = pstart;
+void displayll(node*pstart){
+    if (pstart == NULL)
+    {
+        printf("List is Empty\n");
+        return;
+    }
+    node*ptr = pstart;
     while (ptr != NULL)
     {
-        printf("%d\n",ptr->number);
+        printf("%d -> ",ptr->number);
         ptr = ptr->next;
-    } 
-    //Free Memory Allocated
-    ptr = pstart;
-    while (ptr != NULL) {
-        node *temp = ptr;
-        ptr = ptr->next;
-        free(temp);
     }
-    return 0;
+    printf("NULL\n");
+}
+
+node * insertAtBeginning(node* pstart){
+    node * pnode = (node*)malloc(sizeof(node));
+    printf("Inserting At Beginning\n");
+    printf("Enter data for node : ");
+    scanf("%d",&pnode->number);
+    pnode->next = pstart;
+    pstart = pnode;
+    return pstart;
 }
