@@ -38,4 +38,10 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("info","The user clicked the bottom button")
     }
+    fun loadConstraintLayout(v:View){
+        setContentView(R.layout.activity_main)
+    }
+    fun loadTableLayout(v:View){
+//        setContentView(R.layout.my_table_layout)
+    }
 }
