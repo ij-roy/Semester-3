@@ -16,54 +16,76 @@
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100sp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:padding="15sp"
+        android:paddingHorizontal="15sp"
+        android:paddingVertical="15sp"
+        android:paddingStart="15sp"
+        android:paddingLeft="15sp"
+        android:paddingTop="15sp"
+        android:paddingEnd="15sp"
+        android:paddingRight="15sp"
+        android:paddingBottom="15sp"
         android:text="Select a layout type to view an example . The onClick attribute of each button will call a function which executtes setContentView to load the new layout." />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="15sp"
+        android:paddingEnd="15sp">
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Load ConstraintLayout" />
+            android:layout_weight=".3"
+            android:text="Load ConstraintLayout"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight=".7"
+            android:onClick="loadConstraintLayout"
             android:text="Load" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="15sp"
+        android:paddingEnd="15sp">
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Load TableLayout" />
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight=".3"
+            android:text="Load TableLayout"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight=".7"
+            android:onClick="loadTableLayout"
             android:text="Load" />
     </LinearLayout>
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="75sp"
+        android:layout_marginRight="15sp" />
 
 </LinearLayout>
