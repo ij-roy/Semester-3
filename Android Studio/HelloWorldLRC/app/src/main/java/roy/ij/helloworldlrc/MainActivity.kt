@@ -9,6 +9,49 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.express_yourself)
+
+        var name = "IJ Roy"
+        val yearOfBirth = 2005
+        var currentYear = 2024
+        var age: Int
+
+        age = currentYear - yearOfBirth
+        Log.i("info","$age")
+
+        currentYear++
+        Log.i("info","$name was born in $yearOfBirth and is $age years old. Next year he will be ${currentYear-yearOfBirth} years old")
+
+        name = "Nile"
+        when (name) {
+            "Atlantic","Pacific", "Arctic" ->
+                Log.i("Found:", "$name is an ocean")
+
+            "Thames","Nile", "Mississippi" ->
+                Log.i("Found:", "$name is a river")
+
+            "Labrador","Beagle", "Jack Russel" ->
+                Log.i("Found:", "$name is a dog")
+
+            else -> {
+                Log.i("Not found:", "$name is not in database")
+            }
+        }
+
+    }
+}
+
+
+
+
+
+/*
+Day 5
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +117,7 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
+*/
 
 
 // Till Chapter 5
