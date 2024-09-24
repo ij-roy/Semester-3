@@ -1,0 +1,15 @@
+Syllabus For COA
+
+Unit I: BASIC STRUCTURE OF COMPUTERS: Review of Digital Logic and Systems, Functional units, Von Neuman and Harvard Architecture Basic operational concepts, Bus structures, PCI, Multiple bus organization, Performance, and metrics,
+
+Unit II: BASIC PROCESSING UNIT: Fundamental concepts, Execution of a complete instruction, The Arithmetic and Logic Unit (ALU), Number Systems, Fixed point representation, and Arithmetic, Floating Point Representation and Arithmetic, Hardwired control, Micro programmed control.
+
+Unit III: INSTRUCTION SETS: Characteristics and functions, x86 Architecture, Instruction set architecture, Addressing modes and formats, RISC and CISC.
+
+Unit IV: PIPELINING: Basic concepts, Data hazards, Instruction hazards, Influence on instruction sets, Data path, and control path, Performance considerations, Exception handling.   
+
+Unit V: MEMORY SYSTEM: Basic concepts, Memory Hierarchy, Semiconductor RAM, ROM, Speed, Size and cost, Cache memories, Improving cache performance, Virtual memory, Memory management requirements, Associative memories, and Secondary storage devices.
+
+Unit VI: I/O ORGANIZATION: Accessing I/O devices, Programmed Input/Output, Interrupts, Direct Memory Access, I/O devices, and processors.
+
+Unit VII: PARALLEL PROCESSING: The use of multiple processors, Symmetric Multiprocessors, Cache coherence, UMA, and NUMA.
