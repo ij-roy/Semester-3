@@ -1,0 +1,3 @@
+[submodule "Android Studio/LRC-Book"]
+	path = Android Studio/LRC-Book
+	url = https://github.com/PacktPublishing/Android-Programming-with-Kotlin-for-Beginners.git
