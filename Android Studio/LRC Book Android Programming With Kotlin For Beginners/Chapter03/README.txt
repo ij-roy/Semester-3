@@ -1,1 +1,0 @@
-All the code in chapter 3 is auto-generated in Android Studio
