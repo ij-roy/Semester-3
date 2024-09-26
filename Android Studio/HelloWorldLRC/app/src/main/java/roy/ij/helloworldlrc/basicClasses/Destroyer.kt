@@ -6,7 +6,7 @@ class Destroyer(name:String) {
     var name:String = ""
         private set
 
-    private val type = "IJ Roy"
+    private val type = "Destroyer"
 
     private var hullIntegrity = 200
 
@@ -24,8 +24,8 @@ class Destroyer(name:String) {
     fun takeDamage(damageTaken: Int){
         if (!sunk){
             hullIntegrity -= damageTaken
-            Log.i("$name damage taken =","$name damage taken = $damageTaken")
-            Log.i("$name hull integrity =","$name hull integrity = $hullIntegrity")
+            Log.d("$name damage taken =","$name damage taken = $damageTaken")
+            Log.d("$name hull integrity =","$name hull integrity = $hullIntegrity")
 
             if (hullIntegrity <= 0){
                 Log.d("Destroyer","$name has been sunk")
