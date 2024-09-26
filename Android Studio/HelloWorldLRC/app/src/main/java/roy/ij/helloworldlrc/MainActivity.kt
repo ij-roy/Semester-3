@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         // Take stock of the supplies situation
         Log.d("${friendlyDestroyer.name} ammo = ",
-            "${friendlyDestroyer.ammo}")
+            "${friendlyDestroyer.name} ammo = ${friendlyDestroyer.ammo}")
 
         Log.d("${friendlyCarrier.name} attacks = ",
-            "${friendlyCarrier.attacksRemaining}")
+            "${friendlyCarrier.name} attacks = ${friendlyCarrier.attacksRemaining}")
 
         // Dock at the shipyard
         friendlyShipyard.serviceCarrier(friendlyCarrier)
@@ -45,10 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         // Take stock of the supplies situation
         Log.d("${friendlyDestroyer.name} ammo = ",
-            "${friendlyDestroyer.ammo}")
+            "${friendlyDestroyer.name} ammo = ${friendlyDestroyer.ammo}")
 
         Log.d("${friendlyCarrier.name} attacks = ",
-            "${friendlyCarrier.attacksRemaining}")
+            "${friendlyCarrier.name} attacks = ${friendlyCarrier.attacksRemaining}")
 
 
         // Finish off the enemy
