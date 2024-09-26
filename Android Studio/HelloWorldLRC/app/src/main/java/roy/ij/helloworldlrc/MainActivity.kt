@@ -8,9 +8,61 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import roy.ij.helloworldlrc.basicClasses.Carrier
+import roy.ij.helloworldlrc.basicClasses.Destroyer
+import roy.ij.helloworldlrc.basicClasses.Shipyard
+
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.express_yourself)
+
+        val friendlyDestroyer = Destroyer("Invincible")
+        val friendlyCarrier = Carrier("Indomitable")
+
+        val enemyDestroyer = Destroyer("Grey Death")
+        val enemyCarrier = Carrier("Big Grey Death")
+
+        val friendlyShipyard = Shipyard()
+
+        friendlyDestroyer.takeDamage(enemyDestroyer.shootShell())
+        friendlyDestroyer.takeDamage(enemyCarrier.launchAerialAttack())
+        enemyCarrier.takeDamage(friendlyCarrier.launchAerialAttack())
+        enemyCarrier.takeDamage(friendlyDestroyer.shootShell())
+
+        // Take stock of the supplies situation
+        Log.d("${friendlyDestroyer.name} ammo = ",
+            "${friendlyDestroyer.ammo}")
+
+        Log.d("${friendlyCarrier.name} attacks = ",
+            "${friendlyCarrier.attacksRemaining}")
+
+        // Dock at the shipyard
+        friendlyShipyard.serviceCarrier(friendlyCarrier)
+        friendlyShipyard.serviceDestroyer(friendlyDestroyer)
+
+        // Take stock of the supplies situation
+        Log.d("${friendlyDestroyer.name} ammo = ",
+            "${friendlyDestroyer.ammo}")
+
+        Log.d("${friendlyCarrier.name} attacks = ",
+            "${friendlyCarrier.attacksRemaining}")
+
+
+        // Finish off the enemy
+        enemyDestroyer.takeDamage(friendlyDestroyer.shootShell())
+        enemyDestroyer.takeDamage(friendlyCarrier.launchAerialAttack())
+        enemyDestroyer.takeDamage(friendlyDestroyer.shootShell())
+
+    }
+}
 
 
 
+
+/*
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +121,7 @@ class MainActivity : AppCompatActivity() {
         // satelliteController.gpsCoordinates = "1.2345, 5.6789"
 
         // But this will print the gpsCoordinates
-        Log.i("Coords=","$satelliteController.gpsCoordinates")
+//        Log.i("Coords=","$satelliteController.gpsCoordinates")
 
 
         // Instantiate a Book using the primary constructor
@@ -123,6 +175,7 @@ class Soldier{
 
 
 }
+*/
 
 
 
