@@ -11,8 +11,44 @@ import androidx.core.view.WindowInsetsCompat
 import roy.ij.helloworldlrc.basicClasses.Carrier
 import roy.ij.helloworldlrc.basicClasses.Destroyer
 import roy.ij.helloworldlrc.basicClasses.Shipyard
+import roy.ij.helloworldlrc.inheritance.Paratrooper
+import roy.ij.helloworldlrc.inheritance.Sniper
+import roy.ij.helloworldlrc.inheritance.Soldier
+import roy.ij.helloworldlrc.inheritance.SpecialForces
 
 
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val soldier = Soldier()
+        soldier.shoot()
+
+        val specialForces = SpecialForces()
+        specialForces.shoot()
+        specialForces.SneakUpOnEnemy()
+
+        val paratrooper = Paratrooper()
+        paratrooper.shoot()
+        paratrooper.jumpOutOfPlane()
+
+        val sniper = Sniper()
+        sniper.getIntoPosition()
+        sniper.shoot()
+        sniper.shoot()
+        sniper.shoot()
+        sniper.shoot()
+
+    }
+}
+
+
+
+
+
+/*
+Day 8
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,9 +94,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-
-
+*/
 
 /*
 class MainActivity : AppCompatActivity() {
