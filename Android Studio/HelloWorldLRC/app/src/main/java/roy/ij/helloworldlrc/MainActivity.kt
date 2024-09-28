@@ -8,15 +8,60 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import roy.ij.helloworldlrc.basicClasses.Carrier
-import roy.ij.helloworldlrc.basicClasses.Destroyer
-import roy.ij.helloworldlrc.basicClasses.Shipyard
+import roy.ij.helloworldlrc.basicClassesWithInheritance.Carrier
+import roy.ij.helloworldlrc.basicClassesWithInheritance.Destroyer
+import roy.ij.helloworldlrc.basicClassesWithInheritance.ShipYard
 import roy.ij.helloworldlrc.inheritance.Paratrooper
 import roy.ij.helloworldlrc.inheritance.Sniper
 import roy.ij.helloworldlrc.inheritance.Soldier
 import roy.ij.helloworldlrc.inheritance.SpecialForces
 
 
+
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val friendlyDestroyer = Destroyer("Invincible")
+        val friendlyCarrier = Carrier("Indomitable")
+
+        val enemyDestroyer = Destroyer("Grey Death")
+        val enemyCarrier = Carrier("Big Grey Death")
+
+        val friendlyShipyard = ShipYard()
+
+        // A small battle
+        friendlyDestroyer.takeDamage(enemyDestroyer.attack())
+        friendlyDestroyer.takeDamage(enemyCarrier.attack())
+        enemyCarrier.takeDamage(friendlyCarrier.attack())
+        enemyCarrier.takeDamage(friendlyDestroyer.attack())
+
+        // Take stock of the supplies situation
+        friendlyDestroyer.showStats()
+        friendlyCarrier.showStats()
+
+        // Dock at the shipyard
+        friendlyShipyard.serviceShip(friendlyCarrier)
+        friendlyShipyard.serviceShip(friendlyDestroyer)
+
+        // Take stock of the supplies situation
+        friendlyDestroyer.showStats()
+        friendlyCarrier.showStats()
+
+        // Finish off the enemy
+        enemyDestroyer.takeDamage(friendlyDestroyer.attack())
+        enemyDestroyer.takeDamage(friendlyCarrier.attack())
+        enemyDestroyer.takeDamage(friendlyDestroyer.attack())
+    }
+}
+
+
+
+/*
+Day 9
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,10 +87,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-
-
-
+*/
 
 /*
 Day 8
