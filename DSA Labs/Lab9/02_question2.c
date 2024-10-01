@@ -27,7 +27,7 @@ int main(){
         switch (choice)
         {
         case 1:
-            printf("Enter element to push : ");
+            printf("Enter element to queue : ");
             scanf("%d",&data);
             rear = enqueue(rear,data);
             break;
@@ -66,12 +66,12 @@ circularQueue * dequeue(circularQueue * rear){
     circularQueue * front = rear->next;
     if (front == NULL)
     {
-        printf("Popping will lead to underflow");
+        printf("Dequeue will lead to underflow");
     }else{
         circularQueue * temp = front;
         front = front->next;
         rear->next = front;
-        printf("Popped element is %d",temp->data);
+        printf("Dequeued element is %d",temp->data);
         free(temp);
     }
     
