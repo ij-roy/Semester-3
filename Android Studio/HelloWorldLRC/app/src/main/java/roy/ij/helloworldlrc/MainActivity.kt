@@ -17,8 +17,21 @@ import roy.ij.helloworldlrc.inheritance.Soldier
 import roy.ij.helloworldlrc.inheritance.SpecialForces
 
 
+class MainActivity : AppCompatActivity() , View.OnClickListener{
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.kotlin_meets_ui)
+    }
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
+    }
+}
 
 
+/*
+Day 10
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         enemyDestroyer.takeDamage(friendlyDestroyer.attack())
     }
 }
-
+*/
 
 
 /*
