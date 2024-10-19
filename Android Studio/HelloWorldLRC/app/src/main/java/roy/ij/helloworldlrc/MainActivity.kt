@@ -3,6 +3,8 @@ package roy.ij.helloworldlrc
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +19,94 @@ import roy.ij.helloworldlrc.inheritance.Soldier
 import roy.ij.helloworldlrc.inheritance.SpecialForces
 
 
+
 class MainActivity : AppCompatActivity() , View.OnClickListener{
+
+    private var value = 0
+    // Declare your buttons and text view
+    private lateinit var btnAdd: Button
+    private lateinit var btnTake: Button
+    private lateinit var txtValue: TextView
+    private lateinit var btnGrow: Button
+    private lateinit var btnShrink: Button
+    private lateinit var btnReset: Button
+    private lateinit var btnHide: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.kotlin_meets_ui)
+
+        btnAdd = findViewById(R.id.btnAdd)
+        btnTake = findViewById(R.id.btnTake)
+        txtValue = findViewById(R.id.txtValue)
+        btnGrow = findViewById(R.id.btnGrow)
+        btnShrink = findViewById(R.id.btnShrink)
+        btnReset = findViewById(R.id.btnReset)
+        btnHide = findViewById(R.id.btnHide)
+
+        btnAdd.setOnClickListener(this)
+        btnTake.setOnClickListener(this)
+        txtValue.setOnClickListener(this)
+        btnGrow.setOnClickListener(this)
+        btnShrink.setOnClickListener(this)
+        btnReset.setOnClickListener(this)
+        btnHide.setOnClickListener(this)
+
+
+    }
+
+    override fun onClick(v: View) {
+        // A local variable to use later
+        val size: Float
+
+        when (v.id) {
+            R.id.btnAdd -> {
+                value++
+                txtValue.text = "$value"
+            }
+
+            R.id.btnTake -> {
+                value--
+                txtValue.text = "$value"
+            }
+
+            R.id.btnReset -> {
+                value = 0
+                txtValue.text = "$value"
+            }
+
+            R.id.btnGrow -> {
+                size = txtValue.textScaleX
+                txtValue.textScaleX = size + 1
+            }
+
+            R.id.btnShrink -> {
+                size = txtValue.textScaleX
+                txtValue.textScaleX = size - 1
+            }
+
+            R.id.btnHide -> if (txtValue.visibility == View.VISIBLE) {
+                // Currently visible so hide it
+                txtValue.visibility = View.INVISIBLE
+
+                // Change text on the button
+                btnHide.text = "SHOW"
+
+            } else {
+                // Currently hidden so show it
+                txtValue.visibility = View.VISIBLE
+
+                // Change text on the button
+                btnHide.text = "HIDE"
+            }
+        }
+    }
+
+}
+
+/*
+Day 11
+class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +117,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
         TODO("Not yet implemented")
     }
 }
-
+*/
 
 /*
 Day 10
