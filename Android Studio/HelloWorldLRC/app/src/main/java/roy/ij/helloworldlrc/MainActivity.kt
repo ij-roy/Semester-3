@@ -21,12 +21,30 @@ import androidx.core.view.WindowInsetsCompat
 import roy.ij.helloworldlrc.basicClassesWithInheritance.Carrier
 import roy.ij.helloworldlrc.basicClassesWithInheritance.Destroyer
 import roy.ij.helloworldlrc.basicClassesWithInheritance.ShipYard
+import roy.ij.helloworldlrc.dialogDemo.MyDialog
 import roy.ij.helloworldlrc.inheritance.Paratrooper
 import roy.ij.helloworldlrc.inheritance.Sniper
 import roy.ij.helloworldlrc.inheritance.Soldier
 import roy.ij.helloworldlrc.inheritance.SpecialForces
 
 
+class MainActivity : AppCompatActivity(){
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.dialog_demo)
+        val button = findViewById<Button>(R.id.button5)
+        button.setOnClickListener {
+            val myDialog = MyDialog()
+            myDialog.show(supportFragmentManager,"123")
+
+        }
+    }
+
+}
+
+/*
+Day 14
 class MainActivity :AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,6 +115,7 @@ class MainActivity :AppCompatActivity(){
         }
     }
 }
+*/
 
 
 /*
