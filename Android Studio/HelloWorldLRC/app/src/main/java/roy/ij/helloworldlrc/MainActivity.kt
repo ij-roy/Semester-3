@@ -18,16 +18,53 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import roy.ij.helloworldlrc.basicClassesWithInheritance.Carrier
 import roy.ij.helloworldlrc.basicClassesWithInheritance.Destroyer
 import roy.ij.helloworldlrc.basicClassesWithInheritance.ShipYard
+import roy.ij.helloworldlrc.dialogDemo.DialogNewNote
 import roy.ij.helloworldlrc.dialogDemo.MyDialog
 import roy.ij.helloworldlrc.inheritance.Paratrooper
 import roy.ij.helloworldlrc.inheritance.Sniper
 import roy.ij.helloworldlrc.inheritance.Soldier
 import roy.ij.helloworldlrc.inheritance.SpecialForces
+import roy.ij.helloworldlrc.noteToSelf.DialogShowNote
+import roy.ij.helloworldlrc.noteToSelf.Note
 
+class MainActivity : AppCompatActivity(){
 
+    private var tempNote = Note()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.note_to_self_activity_main)
+
+        val fab = findViewById<FloatingActionButton>(R.id.fab)
+
+        fab.setOnClickListener {
+            val dialog = DialogNewNote()
+            dialog.show(supportFragmentManager, "")
+        }
+
+        val button = findViewById<View>(R.id.button6) as Button
+        button.setOnClickListener {
+            // Create a new DialogShowNote called dialog
+            val dialog = DialogShowNote()
+
+            // Send the note via the sendNoteSelected method
+            dialog.sendNoteSelected(tempNote)
+
+            // Create the dialog
+            dialog.show(supportFragmentManager, "123")
+        }
+    }
+
+    fun createNewNote(n: Note) {
+        tempNote = n
+    }
+}
+
+/*
+Dialog Demo
 class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +79,7 @@ class MainActivity : AppCompatActivity(){
     }
 
 }
+*/
 
 /*
 Day 14

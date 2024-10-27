@@ -2,4 +2,5 @@
 <resources>
     <dimen name="card_corner_radius">16dp</dimen>
     <dimen name="card_margin">10dp</dimen>
+    <dimen name="fab_margin" />
 </resources>
