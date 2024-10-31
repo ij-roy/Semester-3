@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Firebase_AddNote">
+
+  <TextView
+      android:id="@+id/textView16"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="Write Your Note Here"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/et_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:ems="10"
+      android:hint="Enter Title"
+      android:inputType="text"
+      android:minHeight="48dp"
+      app:layout_constraintEnd_toEndOf="@+id/textView16"
+      app:layout_constraintStart_toStartOf="@+id/textView16"
+      app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+  <EditText
+      android:id="@+id/et_description"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:ems="10"
+      android:hint="Enter Description"
+      android:inputType="text"
+      android:minHeight="48dp"
+      app:layout_constraintEnd_toEndOf="@+id/et_title"
+      app:layout_constraintStart_toStartOf="@+id/et_title"
+      app:layout_constraintTop_toBottomOf="@+id/et_title" />
+
+  <Button
+      android:id="@+id/saveNoteButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="360dp"
+      android:text="Save"
+      android:backgroundTint="@color/red"
+      android:textColor="@color/white"
+      app:layout_constraintEnd_toEndOf="@+id/et_description"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="@+id/et_description"
+      app:layout_constraintTop_toBottomOf="@+id/et_description" />
+</androidx.constraintlayout.widget.ConstraintLayout>

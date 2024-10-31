@@ -63,7 +63,7 @@ class DialogNewNote : DialogFragment() {
             val callingActivity = activity as MainActivity?
 
             // Pass newNote back to MainActivity
-            callingActivity!!.createNewNote(newNote)
+//            callingActivity!!.createNewNote(newNote)
 
             // Quit the dialog
             dismiss()

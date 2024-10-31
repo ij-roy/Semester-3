@@ -1,36 +1,125 @@
 package roy.ij.helloworldlrc
 
-import android.graphics.Color
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Switch
-import android.widget.TextClock
-import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import roy.ij.helloworldlrc.basicClassesWithInheritance.Carrier
-import roy.ij.helloworldlrc.basicClassesWithInheritance.Destroyer
-import roy.ij.helloworldlrc.basicClassesWithInheritance.ShipYard
-import roy.ij.helloworldlrc.dialogDemo.DialogNewNote
-import roy.ij.helloworldlrc.dialogDemo.MyDialog
-import roy.ij.helloworldlrc.inheritance.Paratrooper
-import roy.ij.helloworldlrc.inheritance.Sniper
-import roy.ij.helloworldlrc.inheritance.Soldier
-import roy.ij.helloworldlrc.inheritance.SpecialForces
-import roy.ij.helloworldlrc.noteToSelf.DialogShowNote
-import roy.ij.helloworldlrc.noteToSelf.Note
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.auth
+import roy.ij.helloworldlrc.databinding.FirebaseActivityMainBinding
+import roy.ij.helloworldlrc.firebase.FirebaseSignOutActivity
 
+//1:30:00
+class MainActivity : AppCompatActivity(){
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var binding: FirebaseActivityMainBinding
+    private lateinit var googleSignInClient: GoogleSignInClient
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = FirebaseActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.hide()
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
+        googleSignInClient = GoogleSignIn.getClient(this,gso)
+        auth = Firebase.auth
+        binding.button7.setOnClickListener {
+            auth.createUserWithEmailAndPassword(
+                binding.email.text.toString(),
+                binding.password.text.toString()
+            )
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Log.i("info", "createUserWithEmail: success")
+                        val user = auth.currentUser
+                        Toast.makeText(this, task.result.toString(), Toast.LENGTH_LONG).show()
+                    }
+                    else {
+                        Log.i("info", "createUserWithEmail: Failure")
+                        Toast.makeText(this,"Authentication Failed",Toast.LENGTH_LONG).show()
+                    }
+                }
+        }
+        binding.google.setOnClickListener{
+            val signInClient = googleSignInClient.signInIntent
+//            startActivity(signInClient)
+            //55:34
+            launcher.launch(signInClient)
+        }
+    }
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        result ->
+        if (result.resultCode == Activity.RESULT_OK){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            if(task.isSuccessful){
+                val account:GoogleSignInAccount?=task.result
+                val credential = GoogleAuthProvider.getCredential(account?.idToken,null)
+                auth.signInWithCredential(credential).addOnCompleteListener{
+                    if (it.isSuccessful){
+                        Toast.makeText(this,"Done",Toast.LENGTH_LONG).show()
+                        startActivity(Intent(this, FirebaseSignOutActivity::class.java))
+                    }else{
+                        Toast.makeText(this,"Failed1",Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }else{
+            Toast.makeText(this,"Failed",Toast.LENGTH_LONG).show()
+        }
+    }
+
+//    override fun onStart() {
+//        super.onStart()
+//        if (auth.currentUser != null){
+//            startActivity(Intent(this,FirebaseSignOutActivity::class.java))
+//        }
+//    }
+}
+
+/*
+Day 15
+class MainActivity : AppCompatActivity(){
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        var ourArray = IntArray(5)
+        ourArray[0] = 25
+        ourArray[1] = 50
+        ourArray[2] = 125
+        ourArray[3] = 68
+        ourArray[4] = 47
+
+        Log.i("ij","Here is our Array")
+//        Log.i("ij","[0] = ${ourArray[0]}")
+        var answer = 0
+        for (i in 0 until 5){
+            Log.i("ij","[$i] = ${ourArray[i]}")
+            answer+= ourArray[i]
+        }
+        Log.i("ij","Answer = ${answer}")
+        ourArray = IntArray(1000)
+        for (i in 0..999){
+            ourArray[i] = i*5
+            Log.i("ij","i = $i")
+            Log.i("ij","ourArray[$i] = ${ourArray[i]}")
+        }
+    }
+}
+*/
+/*
+Chapter 14 Note to Self
 class MainActivity : AppCompatActivity(){
 
     private var tempNote = Note()
@@ -62,7 +151,7 @@ class MainActivity : AppCompatActivity(){
         tempNote = n
     }
 }
-
+*/
 /*
 Dialog Demo
 class MainActivity : AppCompatActivity(){

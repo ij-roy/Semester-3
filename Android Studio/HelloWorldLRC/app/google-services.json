@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "445638569204",
+    "project_id": "fir-series-bac3f",
+    "storage_bucket": "fir-series-bac3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445638569204:android:a4990e26c7f3bdf35f82a1",
+        "android_client_info": {
+          "package_name": "roy.ij.helloworldlrc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445638569204-64i15qqqj245acus50vlthhlq2v5oj16.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "roy.ij.helloworldlrc",
+            "certificate_hash": "5d51452f1dbb8e3ca24ec60dbdb9a4d92eff911d"
+          }
+        },
+        {
+          "client_id": "445638569204-scf59ncd2lh98n09co278d7lvo5bn35m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmqP13XKwbRJbHToBDTYXv1N4giGrXR7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445638569204-scf59ncd2lh98n09co278d7lvo5bn35m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
