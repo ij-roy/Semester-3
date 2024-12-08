@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Kebab (three vertical dots) icon -->
+    <item
+        android:id="@+id/action_more"
+        android:title="More"
+        android:icon="@drawable/ic_more_vert"
+        app:showAsAction="always">
+
+        <!-- Dropdown options in the menu -->
+        <menu>
+            <item
+                android:id="@+id/action_edit"
+                android:title="Edit User Info"
+                android:icon="@drawable/ic_edit"/>
+            <item
+                android:id="@+id/action_sign_out"
+                android:title="Log Out"
+                android:icon="@drawable/ic_logout"/>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#B0B0B0</color>
+
+    <!-- Primary Color for the app (you can choose your color) -->
+    <color name="primary_color">#00BFFF</color> <!-- Example: Deep Sky Blue -->
+
+    <!-- Text Color for Primary Text -->
+    <color name="primary_text_color">#FF000000</color> <!-- Example: White text color -->
+
+    <!-- Optional: Define other colors -->
+    <color name="stroke_color">#000000</color> <!-- Black stroke for button border -->
+
+    <color name="selected_item_color">#FF0000</color>
+    <color name="unselected_item_color">#808080</color>
+</resources>

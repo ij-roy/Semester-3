@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_background">
+
+    <!-- Skill Name TextView -->
+    <TextView
+        android:id="@+id/skillName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="8dp"
+        android:text="Skill Name Here"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Dynamic Rating Title -->
+    <TextView
+        android:id="@+id/tvSliderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="8dp"
+        android:text="Rate [username] in terms of [skillname]"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <!-- Spacer for aesthetic gap -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <!-- Selected Value Display -->
+    <TextView
+        android:id="@+id/tvSelectedValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:paddingTop="8dp"
+        android:text="Selected Value: 0"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!-- SeekBar for rating selection -->
+    <SeekBar
+        android:id="@+id/seekBarValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="0" />
+
+    <!-- Comments Label -->
+    <TextView
+        android:id="@+id/tvFeedbackPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:paddingTop="16dp" />
+
+    <!-- Feedback Input Area -->
+    <EditText
+        android:id="@+id/etFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:gravity="top"
+        android:hint="Please explain why you choose "
+        android:inputType="textMultiLine"
+        android:minHeight="100dp"
+        android:padding="12dp" />
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Cancel Button -->
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/grey"
+            android:layout_gravity="start" />
+
+        <!-- Spacer for button separation -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primary_color"
+            android:layout_gravity="end"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="24dp"-->
+<!--    android:background="@drawable/dialog_background">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/skillName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:paddingBottom="8dp"-->
+<!--        android:text="Skill Name Here"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvSliderTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="rate $username in terms of $skillname"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:paddingBottom="8dp" />-->
+
+<!--    <Space-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="20dp">-->
+<!--    </Space>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvSelectedValue"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:paddingTop="8dp"-->
+<!--        android:text="Selected Value: 2"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="16sp" />-->
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/seekBarValue"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:max="8"-->
+<!--        android:progress="0" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvFeedbackPrompt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Comments"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:paddingTop="16dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/etFeedback"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/edit_text_background"-->
+<!--        android:hint="Please Explain Did You Choose $Selected Value"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:minHeight="100dp"-->
+<!--        android:padding="12dp"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:paddingStart="16dp"-->
+<!--        android:paddingEnd="16dp">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnCancel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Cancel"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:backgroundTint="@color/grey"-->
+<!--            android:layout_gravity="start" />-->
+
+<!--        <Space-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnSubmit"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Submit"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:backgroundTint="@color/primary_color"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:layout_marginStart="8dp" />-->
+<!--    </LinearLayout>-->
+
+
+<!--</LinearLayout>-->

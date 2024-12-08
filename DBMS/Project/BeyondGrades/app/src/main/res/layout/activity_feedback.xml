@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedbackDataClass">
+
+    <TextView
+        android:id="@+id/festNameinFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="FestName"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team of"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/festNameinFeedback"
+        app:layout_constraintStart_toStartOf="@+id/festNameinFeedback" />
+
+    <TextView
+        android:id="@+id/festyearInFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FestYear"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/festNameinFeedback"
+        app:layout_constraintTop_toBottomOf="@+id/festNameinFeedback" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feedbackRecyclerViewEvents"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sortSpinner"
+        tools:listitem="@layout/feedback_item" />
+
+    <Spinner
+        android:id="@+id/sortSpinner"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/feedbackRecyclerViewEvents"
+        app:layout_constraintTop_toBottomOf="@+id/festyearInFeedback" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="SortBy"
+        app:layout_constraintBottom_toBottomOf="@+id/sortSpinner"
+        app:layout_constraintStart_toEndOf="@+id/sortSpinner" />
+</androidx.constraintlayout.widget.ConstraintLayout>
