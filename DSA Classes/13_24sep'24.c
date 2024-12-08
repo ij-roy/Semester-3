@@ -1,0 +1,3 @@
+/*
+WAP to find the maximum element of the stack
+*/
