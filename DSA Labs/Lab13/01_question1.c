@@ -28,6 +28,9 @@ node * preorder(node *);
 node * inorder(node *);
 node * postorder(node *);
 node * findmin(node *);
+node * findmax(node *);
+node * deletenode(node *, int);
+int totalnodes(node * );
 
 int main() {
     struct node* root = NULL;
@@ -40,9 +43,9 @@ int main() {
         printf("3. Inorder traversal\n");
         printf("4. Postorder traversal\n");
         printf("5. Find the smallest element\n");
-        // printf("6. Find the largest element\n");
-        // printf("7. Delete an element\n");
-        // printf("8. Count total nodes\n");
+        printf("6. Find the largest element\n");
+        printf("7. Delete an element\n");
+        printf("8. Count total nodes\n");
         // printf("9. Count external nodes\n");
         // printf("10. Count internal nodes\n");
         // printf("11. Determine the height of the tree\n");
@@ -79,6 +82,22 @@ int main() {
                 } else {
                     printf("Tree is empty\n");
                 }
+                break;
+            case 6:
+                if (root) {
+                    node* maxNode = findmax(root);
+                    printf("Largest element: %d\n", maxNode->data);
+                } else {
+                    printf("Tree is empty\n");
+                }
+                break;
+            case 7:
+                printf("Enter element to delete: ");
+                scanf("%d", &data);
+                root = deletenode(root, data);
+                break;
+            case 8:
+                printf("Total nodes %d",totalnodes(root));
                 break;
             case 13:
                 exit(0);
@@ -141,4 +160,59 @@ node * findmin(node * root){
         temp = temp->left;
     }
     return temp;
+}
+
+node * findmax(node * root){
+    node * temp = root;
+    while (temp != NULL && temp->right != NULL){
+        temp = temp->right;
+    }
+    return temp;
+}
+
+node * deletenode(node * root,int data){
+    if (root == NULL)
+    {
+        return root;
+    }
+    if (data < root->data)
+    {
+        root->left = deletenode(root->left,data);
+    }else if(data > root->data){
+        root->right = deletenode(root->right,data);
+    }else{
+        if (root ->left == NULL)
+        {
+            node * temp = root->right;
+            free(root);
+            return(temp);
+        }else if(root ->right == NULL){
+            node * temp = root->left;
+            free(root);
+            return(temp);
+        }
+        // In order Successor
+        node * temp = findmin(root->right);
+        root->data = temp->data;
+        root->right = deletenode(root->right,temp->data);
+    }
+    return root;
+}
+
+int totalnodes(node * root){
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return 1 + totalnodes(root->left) + totalnodes(root->right);
+}
+
+int externalnodes(node * root){
+    if (root == NULL)
+        return 0;
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+    return externalnodes(root->left) + externalnodes(root->right);
 }
